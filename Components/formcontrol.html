@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- Latest compiled and minified CSS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+
+  <!-- Latest compiled JavaScript -->
+
+</head>
+<body style="padding: 70px">
+
+<div class="mb-3">
+<!--    <label for="exampleFormControlInput1" class="form-label">Email address</label>-->
+<!--    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="sample@gmail.com">-->
+  <label for="exampleFormControlInput1" >Email address</label>
+  <input type="email"  id="exampleFormControlInput1" placeholder="sample@gmail.com">
+
+</div>
+<br><br>
+<div class="mb-3">
+  <label for="exampleFormControlInput2" class="form-label">Email address</label>
+  <input type="email"  class="form-control form-control-lg" id="exampleFormControlInput2" placeholder="sample@gmail.com" disabled>
+  <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3" value="Kadikoy / Istanbul">Kadikoy / Istanbul</textarea>
+</div>
+<br><br>
+<div class="mb-3 d-flex gap-3 align-items-center">
+  <label for="sehirler" class="form-label ">Sehirler</label>
+    <select class="form-select" id="sehirler">
+        <option selected>Choose...</option>
+        <option value="1">Istanbul</option>
+        <option value="2">Ankara</option>
+        <option value="3">Izmir</option>
+    </select>
+  <label for="sehirler2" class="form-label ">Sehirler</label>
+  <select class="form-select" id="sehirler2">
+    <option selected>Choose...</option>
+    <option value="1">Istanbul</option>
+    <option value="2">Ankara</option>
+    <option value="3">Izmir</option>
+  </select>
+ </div>
+<br><br>
+<div class="mb-3">
+  <label for="imageFile" class="form-label">Tek dosya Secimi</label>
+  <input type="file" class="form-control" id="imageFile" class="form-control-file">
+</div>
+<div class="mb-3">
+    <label for="imageFile1" class="form-label">Çoklu Dosya Secimi</label>
+    <input type="file" multiple class="form-control" id="imageFile1"
+           class="form-control-file"
+    accept=".css,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" >
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+</body>
+</html>
