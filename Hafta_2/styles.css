@@ -1,0 +1,19 @@
+
+
+h1.colorheader {
+      color: rgb(45, 196, 178);
+      font-family: Arial, sans-serif;
+  }
+
+   input {
+      font-family: Arial, sans-serif;
+      background-color: blueviolet;
+      color: white;
+   }
+
+   body {
+      background-color: rgb(122, 122, 122);
+      font-family: Arial, sans-serif;
+      margin-left: 40px;
+   }
+  

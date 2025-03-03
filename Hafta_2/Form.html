@@ -1,0 +1,76 @@
+<html>
+<head>
+
+  <link rel="stylesheet" href="styles.css">
+
+<title>Method Post Get</title>
+
+    <script language="javascript">
+
+        function mySubmit() {
+
+            var strname = document.forms[0].strname.value;
+            window.alert("Adınız: " + strname);
+
+        }
+
+
+    </script>
+
+<style>
+
+  
+  
+</style>
+
+
+</head>
+
+<body>
+
+    <form name="form1" id="form1" method="post">
+
+      <h1 class="colorheader">Kayıt Ekranı</h1>
+
+         <br>
+
+       <input type="text" name="strname" id="strname" maxlength="50" autocomplete="off" placeholder="adınız" />
+
+         <br>
+
+       <textarea name="straddress" id="straddress" rows="5" cols="20" maxlength="5"></textarea>
+
+         <br>
+
+       <input type="radio" name="rdgender" id="rdgender" value="1"/> Erkek
+       <input type="radio" name="rdgender" id="rdgender" value="2"/> Kadın
+
+         <br>
+
+       <input type="checkbox" name="chkhobies" id="chkhobies" value="1"/> Kitap Okumak
+       <input type="checkbox" name="chkhobies" id="chkhobies" value="2"/> Kitap Okumamak
+       <input type="checkbox" name="chkhobies" id="chkhobies" value="3"/> Kitap yazmak
+
+         <br>
+
+       <select type="dropdown" name="drpcities" id="drpcities">
+         <option value="0">Şehir Seçiniz</option>
+         <option value="1">İstanbul</option> 
+         <option value="2">Ankara</option>
+
+         <br>
+
+         <input type="button" onclick="javascript:mySubmit();" id="btnsubmit" name="btnsubmit" value="Gönder" />
+
+
+    </form>
+
+
+
+
+
+
+
+</body>
+
+</html>
