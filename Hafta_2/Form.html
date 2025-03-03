@@ -30,41 +30,70 @@
 
     <form name="form1" id="form1" method="post">
 
-      <h1 class="colorheader">Kayıt Ekranı</h1>
+      <h1 class="colorheader" style="margin-left: 470px;">Kayıt Ekranı</h1>
 
          <br>
 
-       <input type="text" name="strname" id="strname" maxlength="50" autocomplete="off" placeholder="adınız" />
+         <table border="1" bordercolor="black" align="center" cellpadding="15" cellspacing="15">
 
-         <br>
+      <tr>
 
-       <textarea name="straddress" id="straddress" rows="5" cols="20" maxlength="5"></textarea>
+        <td>Adınız:</td>
 
-         <br>
+       <td><input type="text" name="strname" id="strname" maxlength="10" autocomplete="off" placeholder="Adınız" /></td>
 
-       <input type="radio" name="rdgender" id="rdgender" value="1"/> Erkek
-       <input type="radio" name="rdgender" id="rdgender" value="2"/> Kadın
+      </tr>
 
-         <br>
+      <tr>
 
-       <input type="checkbox" name="chkhobies" id="chkhobies" value="1"/> Kitap Okumak
+        <td>Text Area:</td>
+
+        <td><textarea name="straddress" id="straddress" rows="5" cols="47" maxlength="5"></textarea></td>
+
+      </tr>
+
+      <tr>
+
+        <td>Cinsiyet:</td>
+
+        <td><input type="radio" name="rdgender" id="rdgender" value="1"/> Erkek
+       <input type="radio" name="rdgender" id="rdgender" value="2"/> Kadın</td>
+
+      </tr>
+
+      <tr>
+
+        <td>Hobi:</td>
+
+        <td><input type="checkbox" name="chkhobies" id="chkhobies" value="1"/> Kitap Okumak
        <input type="checkbox" name="chkhobies" id="chkhobies" value="2"/> Kitap Okumamak
-       <input type="checkbox" name="chkhobies" id="chkhobies" value="3"/> Kitap yazmak
+       <input type="checkbox" name="chkhobies" id="chkhobies" value="3"/> Kitap yazmak</td>
 
-         <br>
+      </tr>
 
-       <select type="dropdown" name="drpcities" id="drpcities">
+      <tr>
+
+        <td>Şehir:</td>
+
+        <td><select type="dropdown" name="drpcities" id="drpcities">
          <option value="0">Şehir Seçiniz</option>
          <option value="1">İstanbul</option> 
-         <option value="2">Ankara</option>
+         <option value="2">Ankara</option></td>
 
-         <br>
+      </tr>
 
-         <input type="button" onclick="javascript:mySubmit();" id="btnsubmit" name="btnsubmit" value="Gönder" />
+      <tr>
 
+        
+
+        <td colspan="2" align="center"><input type="button" onclick="javascript:mySubmit();" id="btnsubmit" name="btnsubmit" value="Gönder" /></td>
+        
+      </tr>
+    </table>
 
     </form>
 
+  
 
 
 
