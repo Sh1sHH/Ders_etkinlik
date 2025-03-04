@@ -481,7 +481,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												Öğrenci Yeni Kayıt </a>
 										</li>
 										<li class=" ">
-											<a href="table_tree.html">
+											<a href="list_student.html">
 												Öğrenci Listesi </a>
 										</li>
 
@@ -591,17 +591,17 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="form-group">
 											<label class="col-md-3 control-label">Adınız:</label>
 											<div class="col-md-9">
-												<input type="text" class="form-control" placeholder="Enter text">
+												<input type="text" class="form-control" placeholder="Adınızı giriniz.">
 												<span class="help-block">
-													Lütfen adınızı giriniz. </span>
+													</span>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Soyadınız:</label>
 											<div class="col-md-9">
-												<input type="text" class="form-control" placeholder="Enter text">
+												<input type="text" class="form-control" placeholder="Soyadınızı giriniz.">
 												<span class="help-block">
-													Lütfen soy adınızı giriniz. </span>
+													</span>
 											</div>
 										</div>
 
@@ -609,22 +609,22 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="form-group">
 											<label class="col-md-3 control-label">GSM:</label>
 											<div class="col-md-9">
-												<input type="text" class="form-control" placeholder="Enter text">
+												<input type="text" class="form-control" placeholder="Numaranızı giriniz">
 												<span class="help-block">
-													Lütfen GSM numaranızı giriniz. </span>
+													</span>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Email:</label>
 											<div class="col-md-9">
-												<input type="text" class="form-control" placeholder="Enter text">
+												<input type="text" class="form-control" placeholder="Email adresinizi giriniz">
 												<span class="help-block">
-													Lütfen Email adresinizi giriniz. </span>
+													</span>
 											</div>
 										</div>
 										<div class="form-group">
 											<label>Textarea</label>
-											<textarea class="form-control" rows="3"></textarea>
+											<textarea class="form-control" rows="3" placeholder="Adresinizi giriniz"></textarea>
 										</div>
 										<div class="form-group">
 											<label>Şehir</label>
@@ -633,7 +633,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<option>İstanbul</option>
 												<option>Ankara</option>
 												<option>İzmir</option>
-												<option>Karabük</option>
+												<option>Antalya</option>
 											</select>
 										</div>
 										<div class="form-group">
@@ -662,14 +662,12 @@ License: You must have a valid license purchased only from themeforest(the above
 										<form action="javascript:;" class="form-horizontal form-bordered">
 											<div class="form-body">
 												<div class="form-group">
-													<label class="control-label col-md-3">Doğum Tarihinizi
-														Giriniz:</label>
+													<label class="control-label col-md-3">Doğum Tarihinizi Giriniz:</label>
 													<div class="col-md-3">
-														<input
-															class="form-control form-control-inline input-medium date-picker"
-															size="16" type="text" value="" />
+														<input id="dobPicker" class="form-control" size="16" type="text" />
 													</div>
 												</div>
+											</div>
 										</form>
 
 
@@ -830,6 +828,21 @@ License: You must have a valid license purchased only from themeforest(the above
 			ComponentsPickers.init();
 		});   
 	</script>
+
+<script>
+	jQuery(document).ready(function() {   
+		// DateTime Picker başlatma
+		$("#dobPicker").datetimepicker({
+			format: "yyyy-mm-dd",
+			autoclose: true,
+			todayBtn: true,
+			pickerPosition: "bottom-left"
+		}).datetimepicker('update', new Date()); // Bugünün tarihini varsayılan olarak ayarlar
+	});
+	</script>
+
+
+	
 	<!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
