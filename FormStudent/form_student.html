@@ -54,6 +54,40 @@ License: You must have a valid license purchased only from themeforest(the above
 	<link href="/assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
 	<!-- END THEME STYLES -->
 	<link rel="shortcut icon" href="favicon.ico" />
+
+	<script language="javascript">
+
+		function mySubmit() {
+
+			var Vad = document.getElementById("ad").value;
+			var Vsoyad = document.getElementById("soyad").value;
+			var Vemail = document.getElementById("email").value;
+
+
+			if (Vad == "") {
+				alert("Adınızı giriniz");
+				document.getElementById("ad").focus();
+				return false;
+			}
+			if (Vsoyad == "") {
+				alert("Soyadınızı giriniz");
+				document.getElementById("soyad").focus();
+				return false;
+			}
+			if (Vemail == "") {
+				alert("Email adresinizi giriniz");
+				document.getElementById("email").focus();
+				return false;
+			}
+
+			Document.form1.submit();
+
+		}
+
+	</script>
+
+
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -566,7 +600,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<br>
 						Öğrenci Yeni Kayıt
 					</li>
-					
+
 				</ul>
 				<!-- END PAGE BREADCRUMB -->
 				<!-- BEGIN PAGE CONTENT INNER -->
@@ -586,22 +620,24 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 							</div>
 							<div class="portlet-body form">
-								<form role="form">
+								<form method="post" name="form1" id="form1">
 									<div class="form-body">
 										<div class="form-group">
-											<label class="col-md-3 control-label">Adınız:</label>
+											<label class="col-md-3 control-label">Adınız: *</label>
 											<div class="col-md-9">
-												<input type="text" class="form-control" placeholder="Adınızı giriniz.">
+												<input type="text" class="form-control" placeholder="Adınızı giriniz."
+													required id="ad" name="ad">
 												<span class="help-block">
-													</span>
+												</span>
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-md-3 control-label">Soyadınız:</label>
+											<label class="col-md-3 control-label">Soyadınız: *</label>
 											<div class="col-md-9">
-												<input type="text" class="form-control" placeholder="Soyadınızı giriniz.">
+												<input type="text" class="form-control"
+													placeholder="Soyadınızı giriniz." id="soyad" name="soyad" required>
 												<span class="help-block">
-													</span>
+												</span>
 											</div>
 										</div>
 
@@ -609,26 +645,29 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="form-group">
 											<label class="col-md-3 control-label">GSM:</label>
 											<div class="col-md-9">
-												<input type="text" class="form-control" placeholder="Numaranızı giriniz">
+												<input type="text" class="form-control" placeholder="Numaranızı giriniz"
+													id="gsm" name="gsm">
 												<span class="help-block">
-													</span>
+												</span>
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-md-3 control-label">Email:</label>
+											<label class="col-md-3 control-label">Email: *</label>
 											<div class="col-md-9">
-												<input type="text" class="form-control" placeholder="Email adresinizi giriniz">
+												<input type="text" class="form-control" id="email" name="email"
+													placeholder="Email adresinizi giriniz" required>
 												<span class="help-block">
-													</span>
+												</span>
 											</div>
 										</div>
 										<div class="form-group">
 											<label>Textarea</label>
-											<textarea class="form-control" rows="3" placeholder="Adresinizi giriniz"></textarea>
+											<textarea class="form-control" rows="3" placeholder="Adresinizi giriniz"
+												id="adres" name="adres"></textarea>
 										</div>
 										<div class="form-group">
 											<label>Şehir</label>
-											<select class="form-control">
+											<select class="form-control" id="sehir" name="sehir">
 												<option>Şehir Seçiniz</option>
 												<option>İstanbul</option>
 												<option>Ankara</option>
@@ -638,7 +677,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 										<div class="form-group">
 											<label>Cinsiyet</label>
-											<div class="radio-list">
+											<div class="radio-list" id="cinsiyet" name="cinsiyet">
 												<label>
 													<input type="radio" name="optionsRadios" id="optionsRadios1"
 														value="option1"> Erkek</label>
@@ -650,7 +689,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 										<div class="form-group">
 											<label>Tercih Edlien Bölümler</label>
-											<div class="checkbox-list">
+											<div class="checkbox-list" id="bolumler" name="bolumler">
 												<label>
 													<input type="checkbox"> FM </label>
 												<label>
@@ -662,13 +701,25 @@ License: You must have a valid license purchased only from themeforest(the above
 										<form action="javascript:;" class="form-horizontal form-bordered">
 											<div class="form-body">
 												<div class="form-group">
-													<label class="control-label col-md-3">Doğum Tarihinizi Giriniz:</label>
+													<label class="control-label col-md-3">Doğum Tarihinizi
+														Giriniz:</label>
 													<div class="col-md-3">
-														<input id="dobPicker" class="form-control" size="16" type="text" />
+														<input id="dobPicker" name="dobPicker" class="form-control"
+															size="16" type="text" />
 													</div>
 												</div>
 											</div>
 										</form>
+
+										<div class="form-actions">
+											<div class="row">
+												<div class="col-lg-12 text-center">
+													<input type="button" class="btn btn-circle blue" value="Gönder"
+														onclick="mySubmit();" />
+
+												</div>
+											</div>
+										</div>
 
 
 
@@ -829,20 +880,20 @@ License: You must have a valid license purchased only from themeforest(the above
 		});   
 	</script>
 
-<script>
-	jQuery(document).ready(function() {   
-		// DateTime Picker başlatma
-		$("#dobPicker").datetimepicker({
-			format: "yyyy-mm-dd",
-			autoclose: true,
-			todayBtn: true,
-			pickerPosition: "bottom-left"
-		}).datetimepicker('update', new Date()); // Bugünün tarihini varsayılan olarak ayarlar
-	});
+	<script>
+		jQuery(document).ready(function () {
+			// DateTime Picker başlatma
+			$("#dobPicker").datetimepicker({
+				format: "yyyy-mm-dd",
+				autoclose: true,
+				todayBtn: true,
+				pickerPosition: "bottom-left"
+			}).datetimepicker('update', new Date()); // Bugünün tarihini varsayılan olarak ayarlar
+		});
 	</script>
 
 
-	
+
 	<!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
