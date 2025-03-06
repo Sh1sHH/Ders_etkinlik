@@ -9,11 +9,11 @@
 <body>
     <p id="demo"></p>
     <script>
-        const NorthwindJSON = 
-	    
-           
-		
-				`{
+        const NorthwindJSON =
+
+
+
+            `{
 	"Tarih_Date": {
 		"Currency": [
 			{
@@ -335,9 +335,12 @@
         // ve JSON dosyasının içindeki alan ve alt kısımları sorgulayabilir hale getirir.
 
         const myJSONObject = JSON.parse(NorthwindJSON);
+
+        // farklı bir yok (gereksiz)
         // const usdCurrency = myJSONObject.Tarih_Date.Currency[2];
         // document.getElementById('demo').innerHTML = usdCurrency.Isim + " " + usdCurrency.ForexBuying;
-        document.getElementById('demo').innerHTML = myJSONObject.Tarih_Date.Currency[1].Isim + " " + myJSONObject.Tarih_Date.Currency[1].ForexBuying;
+
+        document.getElementById('demo').innerHTML = myJSONObject.Tarih_Date.Currency[0].Isim + " " + myJSONObject.Tarih_Date.Currency[0].ForexBuying;
 
     </script>
 </body>
