@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        const NorthwindJSON = 
+	    
+           
+		
+				`{
+	"Tarih_Date": {
+		"Currency": [
+			{
+				"Unit": "1",
+				"Isim": "ABD DOLARI",
+				"CurrencyName": "US DOLLAR",
+				"ForexBuying": "36.3682",
+				"ForexSelling": "36.4337",
+				"BanknoteBuying": "36.3427",
+				"BanknoteSelling": "36.4884",
+				"CrossRateUSD": "",
+				"CrossRateOther": "",
+				"_CrossOrder": "0",
+				"_Kod": "USD",
+				"_CurrencyCode": "USD"
+			},
+			{
+				"Unit": "1",
+				"Isim": "AVUSTRALYA DOLARI",
+				"CurrencyName": "AUSTRALIAN DOLLAR",
+				"ForexBuying": "22.7773",
+				"ForexSelling": "22.9259",
+				"BanknoteBuying": "22.6726",
+				"BanknoteSelling": "23.0634",
+				"CrossRateUSD": "1.5929",
+				"CrossRateOther": "",
+				"_CrossOrder": "1",
+				"_Kod": "AUD",
+				"_CurrencyCode": "AUD"
+			},
+			{
+				"Unit": "1",
+				"Isim": "DANİMARKA KRONU",
+				"CurrencyName": "DANISH KRONE",
+				"ForexBuying": "5.2001",
+				"ForexSelling": "5.2256",
+				"BanknoteBuying": "5.1965",
+				"BanknoteSelling": "5.2377",
+				"CrossRateUSD": "6.9829",
+				"CrossRateOther": "",
+				"_CrossOrder": "2",
+				"_Kod": "DKK",
+				"_CurrencyCode": "DKK"
+			},
+			{
+				"Unit": "1",
+				"Isim": "EURO",
+				"CurrencyName": "EURO",
+				"ForexBuying": "38.8476",
+				"ForexSelling": "38.9176",
+				"BanknoteBuying": "38.8204",
+				"BanknoteSelling": "38.9760",
+				"CrossRateUSD": "",
+				"CrossRateOther": "1.0682",
+				"_CrossOrder": "9",
+				"_Kod": "EUR",
+				"_CurrencyCode": "EUR"
+			},
+			{
+				"Unit": "1",
+				"Isim": "İNGİLİZ STERLİNİ",
+				"CurrencyName": "POUND STERLING",
+				"ForexBuying": "46.5634",
+				"ForexSelling": "46.8062",
+				"BanknoteBuying": "46.5308",
+				"BanknoteSelling": "46.8764",
+				"CrossRateUSD": "",
+				"CrossRateOther": "1.2825",
+				"_CrossOrder": "10",
+				"_Kod": "GBP",
+				"_CurrencyCode": "GBP"
+			},
+			{
+				"Unit": "1",
+				"Isim": "İSVİÇRE FRANGI",
+				"CurrencyName": "SWISS FRANK",
+				"ForexBuying": "40.8812",
+				"ForexSelling": "41.1437",
+				"BanknoteBuying": "40.8199",
+				"BanknoteSelling": "41.2054",
+				"CrossRateUSD": "0.8876",
+				"CrossRateOther": "",
+				"_CrossOrder": "3",
+				"_Kod": "CHF",
+				"_CurrencyCode": "CHF"
+			},
+			{
+				"Unit": "1",
+				"Isim": "İSVEÇ KRONU",
+				"CurrencyName": "SWEDISH KRONA",
+				"ForexBuying": "3.5001",
+				"ForexSelling": "3.5363",
+				"BanknoteBuying": "3.4976",
+				"BanknoteSelling": "3.5445",
+				"CrossRateUSD": "10.35",
+				"CrossRateOther": "",
+				"_CrossOrder": "4",
+				"_Kod": "SEK",
+				"_CurrencyCode": "SEK"
+			},
+			{
+				"Unit": "1",
+				"Isim": "KANADA DOLARI",
+				"CurrencyName": "CANADIAN DOLLAR",
+				"ForexBuying": "25.2297",
+				"ForexSelling": "25.3435",
+				"BanknoteBuying": "25.1364",
+				"BanknoteSelling": "25.4398",
+				"CrossRateUSD": "1.4395",
+				"CrossRateOther": "",
+				"_CrossOrder": "6",
+				"_Kod": "CAD",
+				"_CurrencyCode": "CAD"
+			},
+			{
+				"Unit": "1",
+				"Isim": "KUVEYT DİNARI",
+				"CurrencyName": "KUWAITI DINAR",
+				"ForexBuying": "117.2327",
+				"ForexSelling": "118.7667",
+				"BanknoteBuying": "115.4742",
+				"BanknoteSelling": "120.5482",
+				"CrossRateUSD": "",
+				"CrossRateOther": "3.2417",
+				"_CrossOrder": "11",
+				"_Kod": "KWD",
+				"_CurrencyCode": "KWD"
+			},
+			{
+				"Unit": "1",
+				"Isim": "NORVEÇ KRONU",
+				"CurrencyName": "NORWEGIAN KRONE",
+				"ForexBuying": "3.2796",
+				"ForexSelling": "3.3016",
+				"BanknoteBuying": "3.2773",
+				"BanknoteSelling": "3.3092",
+				"CrossRateUSD": "11.06",
+				"CrossRateOther": "",
+				"_CrossOrder": "7",
+				"_Kod": "NOK",
+				"_CurrencyCode": "NOK"
+			},
+			{
+				"Unit": "1",
+				"Isim": "SUUDİ ARABİSTAN RİYALİ",
+				"CurrencyName": "SAUDI RIYAL",
+				"ForexBuying": "9.6965",
+				"ForexSelling": "9.7140",
+				"BanknoteBuying": "9.6238",
+				"BanknoteSelling": "9.7869",
+				"CrossRateUSD": "3.7506",
+				"CrossRateOther": "",
+				"_CrossOrder": "8",
+				"_Kod": "SAR",
+				"_CurrencyCode": "SAR"
+			},
+			{
+				"Unit": "100",
+				"Isim": "JAPON YENİ",
+				"CurrencyName": "JAPENESE YEN",
+				"ForexBuying": "24.2815",
+				"ForexSelling": "24.4423",
+				"BanknoteBuying": "24.1917",
+				"BanknoteSelling": "24.5352",
+				"CrossRateUSD": "149.42",
+				"CrossRateOther": "",
+				"_CrossOrder": "5",
+				"_Kod": "JPY",
+				"_CurrencyCode": "JPY"
+			},
+			{
+				"Unit": "1",
+				"Isim": "BULGAR LEVASI",
+				"CurrencyName": "BULGARIAN LEV",
+				"ForexBuying": "19.7512",
+				"ForexSelling": "20.0097",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "1.8310",
+				"CrossRateOther": "",
+				"_CrossOrder": "12",
+				"_Kod": "BGN",
+				"_CurrencyCode": "BGN"
+			},
+			{
+				"Unit": "1",
+				"Isim": "RUMEN LEYİ",
+				"CurrencyName": "NEW LEU",
+				"ForexBuying": "7.7616",
+				"ForexSelling": "7.8632",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "4.6594",
+				"CrossRateOther": "",
+				"_CrossOrder": "13",
+				"_Kod": "RON",
+				"_CurrencyCode": "RON"
+			},
+			{
+				"Unit": "1",
+				"Isim": "RUS RUBLESİ",
+				"CurrencyName": "RUSSIAN ROUBLE",
+				"ForexBuying": "0.40399",
+				"ForexSelling": "0.40927",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "89.52",
+				"CrossRateOther": "",
+				"_CrossOrder": "14",
+				"_Kod": "RUB",
+				"_CurrencyCode": "RUB"
+			},
+			{
+				"Unit": "1",
+				"Isim": "ÇİN YUANI",
+				"CurrencyName": "CHINESE RENMINBI",
+				"ForexBuying": "4.9812",
+				"ForexSelling": "5.0463",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "7.2602",
+				"CrossRateOther": "",
+				"_CrossOrder": "16",
+				"_Kod": "CNY",
+				"_CurrencyCode": "CNY"
+			},
+			{
+				"Unit": "1",
+				"Isim": "PAKİSTAN RUPİSİ",
+				"CurrencyName": "PAKISTANI RUPEE",
+				"ForexBuying": "0.12921",
+				"ForexSelling": "0.13090",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "279.88",
+				"CrossRateOther": "",
+				"_CrossOrder": "17",
+				"_Kod": "PKR",
+				"_CurrencyCode": "PKR"
+			},
+			{
+				"Unit": "1",
+				"Isim": "KATAR RİYALİ",
+				"CurrencyName": "QATARI RIAL",
+				"ForexBuying": "9.9223",
+				"ForexSelling": "10.0521",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "3.6448",
+				"CrossRateOther": "",
+				"_CrossOrder": "18",
+				"_Kod": "QAR",
+				"_CurrencyCode": "QAR"
+			},
+			{
+				"Unit": "1",
+				"Isim": "GÜNEY KORE WONU",
+				"CurrencyName": "SOUTH KOREAN WON",
+				"ForexBuying": "0.02493",
+				"ForexSelling": "0.02526",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "1450",
+				"CrossRateOther": "",
+				"_CrossOrder": "19",
+				"_Kod": "KRW",
+				"_CurrencyCode": "KRW"
+			},
+			{
+				"Unit": "1",
+				"Isim": "AZERBAYCAN YENİ MANATI",
+				"CurrencyName": "AZERBAIJANI NEW MANAT",
+				"ForexBuying": "21.2731",
+				"ForexSelling": "21.5515",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "1.7000",
+				"CrossRateOther": "",
+				"_CrossOrder": "20",
+				"_Kod": "AZN",
+				"_CurrencyCode": "AZN"
+			},
+			{
+				"Unit": "1",
+				"Isim": "BİRLEŞİK ARAP EMİRLİKLERİ DİRHEMİ",
+				"CurrencyName": "UNITED ARAB EMIRATES DIRHAM",
+				"ForexBuying": "9.8470",
+				"ForexSelling": "9.9758",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "3.6726",
+				"CrossRateOther": "",
+				"_CrossOrder": "21",
+				"_Kod": "AED",
+				"_CurrencyCode": "AED"
+			},
+			{
+				"Unit": "1",
+				"Isim": "ÖZEL ÇEKME HAKKI (SDR)",
+				"CurrencyName": "SPECIAL DRAWING RIGHT (SDR)",
+				"ForexBuying": "48.1426",
+				"ForexSelling": "",
+				"BanknoteBuying": "",
+				"BanknoteSelling": "",
+				"CrossRateUSD": "",
+				"CrossRateOther": "1.32256",
+				"_CrossOrder": "0",
+				"_Kod": "XDR",
+				"_CurrencyCode": "XDR"
+			}
+		],
+		"_Tarih": "05.03.2025",
+		"_Date": "03/05/2025",
+		"_Bulten_No": "2025/45"
+	}
+}`
+
+        // myJSONObject yukarıdaki JSON string'ini JSON.parse metodu ile objeye dönüştürülmüş olarak tutar
+        // ve JSON dosyasının içindeki alan ve alt kısımları sorgulayabilir hale getirir.
+
+        const myJSONObject = JSON.parse(NorthwindJSON);
+        // const usdCurrency = myJSONObject.Tarih_Date.Currency[2];
+        // document.getElementById('demo').innerHTML = usdCurrency.Isim + " " + usdCurrency.ForexBuying;
+        document.getElementById('demo').innerHTML = myJSONObject.Tarih_Date.Currency[1].Isim + " " + myJSONObject.Tarih_Date.Currency[1].ForexBuying;
+
+    </script>
+</body>
+
+</html>
