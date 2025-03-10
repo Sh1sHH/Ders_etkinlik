@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to Table</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Employee Information</h2>
+    <table id="jsonTable">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        // JSON verisi
+        const myJSON = `{
+            "empid": "SJ011MS",
+            "personal": {
+                "name": "Smith Jones",
+                "gender": "Male",
+                "age": 28,
+                "address": {
+                    "streetaddress": "724th Street",
+                    "city": "New York",
+                    "state": "NY",
+                    "postalcode": "10038"
+                }
+            },
+            "profile": {
+                "designation": "Deputy General",
+                "department": "Finance"
+            }
+        }`;
+
+        // JSON'u JavaScript nesnesine çevirme
+        const myJSONObject = JSON.parse(myJSON);
+
+        // Tabloya ekleme işlemi için tbody seçme
+        const tableBody = document.querySelector("#jsonTable tbody");
+
+        // JSON verisini tabloya ekleyen fonksiyon
+        function addRow(key, value) {
+            let row = `<tr><td>${key}</td><td>${value}</td></tr>`;
+            tableBody.innerHTML += row;
+        }
+
+        // Verileri tabloya ekleme
+        addRow("Employee ID", myJSONObject.empid);
+        for (let key in myJSONObject.personal) {
+            if (typeof myJSONObject.personal[key] === "object") {
+                for (let subKey in myJSONObject.personal[key]) {
+                    addRow(`Address (${subKey})`, myJSONObject.personal[key][subKey]);
+                }
+            } else {
+                addRow(`Personal (${key})`, myJSONObject.personal[key]);
+            }
+        }
+
+        for (let key in myJSONObject.profile) {
+            addRow(`Profile (${key})`, myJSONObject.profile[key]);
+        }
+
+    </script>
+
+</body>
+</html>

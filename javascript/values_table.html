@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Prices Table</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f9fa; text-align: center; }
+        h2 { color: #333; }
+        table { width: 50%; margin: 20px auto; border-collapse: collapse; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); background-color: white; border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #0f3f6c; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #d5d9e0; }
+        tr:hover { background-color: #6a746e; }
+        #chartdiv { width: 100%; height: 500px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Market Prices</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <!-- Chart -->
+    <div id="chartdiv"></div>
+    
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+    <script>
+        // JSON formatındaki veriyi bir string olarak tanımlıyoruz
+        const jsonString = `[
+            {"x": 1738800000000, "y": 96607.66},
+            {"x": 1738886400000, "y": 96564.45},
+            {"x": 1738972800000, "y": 96540.7},
+            {"x": 1739059200000, "y": 96486.54},
+            {"x": 1739145600000, "y": 96487.05},
+            {"x": 1739232000000, "y": 97461.49},
+            {"x": 1739318400000, "y": 95752},
+            {"x": 1739404800000, "y": 97877.16},
+            {"x": 1739491200000, "y": 96628.78},
+            {"x": 1739577600000, "y": 97494.79},
+            {"x": 1739664000000, "y": 97593.62},
+            {"x": 1739750400000, "y": 96176.21},
+            {"x": 1739836800000, "y": 95771.14},
+            {"x": 1739923200000, "y": 95544},
+            {"x": 1740009600000, "y": 96642.79},
+            {"x": 1740096000000, "y": 98331},
+            {"x": 1740182400000, "y": 96111.11},
+            {"x": 1740268800000, "y": 96580.65},
+            {"x": 1740355200000, "y": 96274.79},
+            {"x": 1740441600000, "y": 91538.39},
+            {"x": 1740528000000, "y": 88664.31},
+            {"x": 1740614400000, "y": 84115.7},
+            {"x": 1740700800000, "y": 84645.86},
+            {"x": 1740787200000, "y": 84379.79},
+            {"x": 1740873600000, "y": 86025.07},
+            {"x": 1740960000000, "y": 94255.51},
+            {"x": 1741046400000, "y": 86081.79},
+            {"x": 1741132800000, "y": 87226.39},
+            {"x": 1741219200000, "y": 90608.57},
+            {"x": 1741305600000, "y": 89920.13}
+        ]`;
+
+        // JSON string'ini JavaScript nesnesine çevirmek için JSON.parse() kullanıyoruz
+        const marketData = JSON.parse(jsonString);
+
+        // Veriyi tabloya ekleme
+        const tableBody = document.getElementById("table-body");
+        marketData.forEach(entry => {
+            let date = new Date(entry.x);
+            let formattedDate = date.toISOString().split('T')[0];
+            let row = `<tr><td>${formattedDate}</td><td>${entry.y}</td></tr>`;
+            tableBody.innerHTML += row;
+        });
+
+        // AMCharts ile grafik oluşturma
+        am5.ready(function() {
+            var root = am5.Root.new("chartdiv");
+            root.setThemes([am5themes_Animated.new(root)]);
+            
+            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                focusable: true,
+                panX: true,
+                panY: true,
+                wheelX: "panX",
+                wheelY: "zoomX"
+            }));
+            
+            var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                maxDeviation: 0.5,
+                groupData: false,
+                baseInterval: { timeUnit: "day", count: 1 },
+                renderer: am5xy.AxisRendererX.new(root, { minorGridEnabled: true })
+            }));
+            
+            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                renderer: am5xy.AxisRendererY.new(root, {})
+            }));
+            
+            var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+                name: "Market Prices",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "y",
+                valueXField: "x",
+                tooltip: am5.Tooltip.new(root, { pointerOrientation: "horizontal", labelText: "{valueY}" })
+            }));
+            
+            series.data.setAll(marketData);
+            
+            var cursor = chart.set("cursor", am5xy.XYCursor.new(root, { xAxis: xAxis }));
+            cursor.lineY.set("visible", false);
+            
+            chart.appear(1000, 100);
+        });
+    </script>
+</body>
+</html>
